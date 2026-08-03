@@ -1,9 +1,9 @@
 {
   "updated": "2026-08-03",
-  "updatedAt": "2026-08-03T18:06:42.964Z",
+  "updatedAt": "2026-08-03T21:18:51.676Z",
   "title": "Axanar Platform Status",
-  "tagline": "Fleet status \u00b7 On Demand \u00b7 Donor portal \u00b7 Legacy pledge recovery",
-  "summary": "Major progress on donor trust: legacy portal package rows that never became live pledges were bulk-restored (hundreds of accounts). Kickstarter/Indiegogo package history is from a limited set of original campaign exports plus the old donor portal\u2014we are still matching gifts under other emails with supporters. On Demand streaming remains live. Open engineering work is down to a small queue focused on residual history recovery and dual-account staff review.",
+  "tagline": "Fleet status \u00b7 Axanar On Demand \u00b7 Donor portal \u00b7 Battle for Axanar",
+  "summary": "Brand and product focus shifted: Axanar On Demand leads the public site (homepage + /watch) with \u201cWatch free. Proof we deliver.\u201d Seven free films stream and download after a simple email unlock (display name optional later). Battle for Axanar / VIP is secondary\u2014pricing only on vip.axanar.com\u2014so the campaign doesn\u2019t look cheap on axanar.com. Donate page grays unavailable multi-tier VIP packs; larger direct gifts to Axanar go to Alec via inquiry form. Signed-in members skip the free-pass gate. Donor legacy package recovery (894 restores) remains shipped; residual multi-email cases still open.",
   "heroStats": [
     {
       "label": "Films free to stream",
@@ -32,8 +32,8 @@
       "id": "ondemand",
       "name": "Axanar On Demand",
       "state": "ok",
-      "label": "Operational",
-      "detail": "Stream, free pass, guided downloads, comments",
+      "label": "Operational \u00b7 brand lead",
+      "detail": "Email unlock \u00b7 free stream & download \u00b7 7 titles \u00b7 brand-first library",
       "href": "https://beta.axanar.com/watch"
     },
     {
@@ -57,20 +57,41 @@
       "name": "Media empire",
       "state": "ok",
       "label": "Operational",
-      "detail": "Tigris progressive/HLS \u00b7 dual webseeds \u00b7 WebTorrent",
+      "detail": "Tigris progressive/HLS \u00b7 dual webseeds \u00b7 WebTorrent \u00b7 free catalog",
       "href": "https://beta.axanar.com/watch/the-gathering-storm"
     }
   ],
   "films": [
     {
-      "slug": "prelude-to-axanar",
-      "title": "Prelude to Axanar",
-      "year": 2014,
+      "slug": "the-gathering-storm",
+      "title": "The Gathering Storm",
+      "year": 2026,
       "runtime": "~21 min",
       "section": "canonical",
-      "badge": "Award-winning",
+      "badge": "Now premiering",
       "hasP2P": true,
-      "assets": 3
+      "assets": 3,
+      "featured": true
+    },
+    {
+      "slug": "daedalus",
+      "title": "Daedalus: Ships of the Four Years War",
+      "year": 2025,
+      "runtime": "~6 min",
+      "section": "canonical",
+      "badge": "Canon short",
+      "hasP2P": true,
+      "assets": 2
+    },
+    {
+      "slug": "the-icarus-maneuver",
+      "title": "The Icarus Maneuver",
+      "year": 2024,
+      "runtime": "~6 min",
+      "section": "canonical",
+      "badge": "Canon short",
+      "hasP2P": true,
+      "assets": 2
     },
     {
       "slug": "the-vulcan-scene",
@@ -83,24 +104,14 @@
       "assets": 2
     },
     {
-      "slug": "prelude-to-axed-we-are",
-      "title": "Prelude to Ax'd-We-Are",
-      "year": 2020,
-      "runtime": "~7 min",
-      "section": "expanded-universe",
-      "badge": "EU \u00b7 parody",
-      "hasP2P": true,
-      "assets": 2
-    },
-    {
-      "slug": "the-icarus-maneuver",
-      "title": "The Icarus Maneuver",
-      "year": 2024,
-      "runtime": "~6 min",
+      "slug": "prelude-to-axanar",
+      "title": "Prelude to Axanar",
+      "year": 2014,
+      "runtime": "~21 min",
       "section": "canonical",
-      "badge": "Short",
+      "badge": "Award-winning",
       "hasP2P": true,
-      "assets": 2
+      "assets": 3
     },
     {
       "slug": "interlude",
@@ -113,25 +124,14 @@
       "assets": 2
     },
     {
-      "slug": "daedalus",
-      "title": "Daedalus",
-      "year": 2025,
-      "runtime": "~6 min",
-      "section": "canonical",
-      "badge": "Ships of the War",
+      "slug": "prelude-to-axed-we-are",
+      "title": "Prelude to Ax'd-We-Are",
+      "year": 2020,
+      "runtime": "~7 min",
+      "section": "expanded-universe",
+      "badge": "EU \u00b7 parody",
       "hasP2P": true,
       "assets": 2
-    },
-    {
-      "slug": "the-gathering-storm",
-      "title": "The Gathering Storm",
-      "year": 2026,
-      "runtime": "~21 min",
-      "section": "canonical",
-      "badge": "Premiere",
-      "hasP2P": true,
-      "assets": 3,
-      "featured": true
     }
   ],
   "epics": [
@@ -170,8 +170,8 @@
       "title": "On Demand fan discovery",
       "status": "shipped",
       "themeKey": "theme:ondemand",
-      "blurb": "Download Now, guided modal, welcome-email deep links\u2014monitoring cold traffic.",
-      "openThemeCount": 4,
+      "blurb": "Homepage and /watch rebranded around Axanar On Demand. Email-only free pass; signed-in skip gate. Discovery CTAs and library order shipped.",
+      "openThemeCount": 0,
       "publicHref": "#issues"
     }
   ],
@@ -193,9 +193,9 @@
           "epic": 62
         },
         {
-          "title": "On Demand discovery",
+          "title": "On Demand brand & library",
           "status": "shipped",
-          "blurb": "Download Now CTAs, peer-assisted saves, welcome email with film download link."
+          "blurb": "Homepage leads with free watch. /watch: Core Saga + Expanded Universe copy, email unlock only, no display-name gate. VIP secondary further down the page."
         },
         {
           "title": "Self-serve email change",
@@ -208,6 +208,11 @@
           "status": "shipped",
           "blurb": "Survey and Account profile share one address; bulk backfill complete.",
           "epic": 61
+        },
+        {
+          "title": "Donate paths clarified",
+          "status": "shipped",
+          "blurb": "Only vip.axanar.com launch reservation is a live VIP SKU (price on VIP storefront). Higher pack cards grayed. Larger gifts to Axanar \u2192 inquiry form emails alec@axanar.com."
         }
       ]
     },
@@ -228,8 +233,8 @@
         },
         {
           "title": "Donate CTA clarity",
-          "status": "planned",
-          "blurb": "Obvious path for long-time fans who still want to give."
+          "status": "shipped",
+          "blurb": "On Demand first; VIP secondary; direct gift inquiry to Alec for larger Axanar gifts outside Warp 9."
         },
         {
           "title": "Partial package reconciliation",
@@ -306,10 +311,10 @@
       "id": "ondemand",
       "theme": "Finding downloads",
       "themeKey": "theme:ondemand",
-      "status": "Operational",
+      "status": "Shipped",
       "state": "ok",
-      "symptom": "Where do I download Gathering Storm?",
-      "action": "Library + Download Now + email deep links live \u2014 watching reports.",
+      "symptom": "Where do I stream or download Gathering Storm and the free library?",
+      "action": "Axanar On Demand: /watch \u2014 open any film, email unlock, Stream free / Download now. Homepage leads with free watch. Signed-in accounts skip the gate.",
       "openCount": 0
     },
     {
@@ -324,6 +329,24 @@
     }
   ],
   "releases": [
+    {
+      "date": "2026-08-03",
+      "title": "Axanar On Demand brand lead",
+      "tag": "Shipped",
+      "body": "Homepage and /watch re-centered on free streaming: \u201cWatch free. Proof we deliver.\u201d Seven titles, Core Saga + Expanded Universe, email-only unlock (nickname optional later). Signed-in members skip the free-pass gate. Battle for Axanar / VIP is secondary further down the page\u2014pricing stays on vip.axanar.com only."
+    },
+    {
+      "date": "2026-08-03",
+      "title": "Donate path: VIP reservation vs direct to Alec",
+      "tag": "Shipped",
+      "body": "Multi-tier VIP pack cards that were not real SKUs are grayed out. Live Warp 9 path is the launch reservation on vip.axanar.com. Larger gifts to Axanar Productions (not Warp 9) use a public inquiry form that emails alec@axanar.com."
+    },
+    {
+      "date": "2026-08-03",
+      "title": "Public status mirror repo",
+      "tag": "Shipped",
+      "body": "Public GitHub repo + Pages mirror (axanar-status) so fleet status is not stuck behind the private engineering monorepo. Canonical branded page remains beta.axanar.com/status."
+    },
     {
       "date": "2026-08-03",
       "title": "Legacy portal package recovery",
@@ -376,7 +399,7 @@
       "date": "2026-08",
       "title": "Donor trust sprint",
       "tag": "In progress",
-      "body": "Shipping reliability and self-serve email change shipped. Perk labels improved. Legacy package backfill shipped Aug 3. Remaining: multi-email cases, donate CTA, ranks link."
+      "body": "Shipping, email change, perk labels, and legacy package backfill shipped. On Demand brand lead + donate path clarity shipped Aug 3. Remaining: multi-email cases, ranks link."
     },
     {
       "date": "2026 H2",
@@ -398,11 +421,11 @@
     "canonical": "https://beta.axanar.com/status"
   },
   "metrics": {
-    "openIssues": 9,
+    "openIssues": 12,
     "closedRecently": 50,
     "noiseClosed": 10,
     "epicsOpen": 2,
-    "inboxEmailOpen": 1,
+    "inboxEmailOpen": 4,
     "retroOpen": 4,
     "themes": {
       "theme:shipping": 0,
