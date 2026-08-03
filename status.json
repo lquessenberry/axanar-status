@@ -1,0 +1,467 @@
+{
+  "updated": "2026-08-03",
+  "updatedAt": "2026-08-03T17:53:07.270Z",
+  "title": "Axanar Platform Status",
+  "tagline": "Fleet status \u00b7 On Demand \u00b7 Donor portal \u00b7 Legacy pledge recovery",
+  "summary": "Major progress on donor trust: legacy portal package rows that never became live pledges were bulk-restored (hundreds of accounts). Kickstarter/Indiegogo package history is from a limited set of original campaign exports plus the old donor portal\u2014we are still matching gifts under other emails with supporters. On Demand streaming remains live. Open engineering work is down to a small queue focused on residual history recovery and dual-account staff review.",
+  "heroStats": [
+    {
+      "label": "Films free to stream",
+      "value": "7",
+      "hint": "Canonical + Expanded Universe"
+    },
+    {
+      "label": "P2P magnets healthy",
+      "value": "8/8",
+      "hint": "Tigris + archive.org webseeds"
+    },
+    {
+      "label": "Open work items",
+      "value": "\u2014",
+      "hint": "Small residual queue",
+      "metric": "openIssues"
+    },
+    {
+      "label": "Legacy packages restored",
+      "value": "894",
+      "hint": "Old portal rows \u2192 live pledges (Aug 3)"
+    }
+  ],
+  "systems": [
+    {
+      "id": "ondemand",
+      "name": "Axanar On Demand",
+      "state": "ok",
+      "label": "Operational",
+      "detail": "Stream, free pass, guided downloads, comments",
+      "href": "https://beta.axanar.com/watch"
+    },
+    {
+      "id": "portal",
+      "name": "Donor portal",
+      "state": "ok",
+      "label": "Operational \u00b7 improving",
+      "detail": "Login, shipping, and self-serve email change live. Large package backfill applied; some multi-email histories still need supporter help to finish matching.",
+      "href": "https://beta.axanar.com/portal"
+    },
+    {
+      "id": "support",
+      "name": "Support & beta feedback",
+      "state": "ok",
+      "label": "Operational",
+      "detail": "Portal, beta widget, and axanartech@gmail.com feed the private engineering queue",
+      "href": "https://beta.axanar.com/portal/support?tab=beta"
+    },
+    {
+      "id": "media",
+      "name": "Media empire",
+      "state": "ok",
+      "label": "Operational",
+      "detail": "Tigris progressive/HLS \u00b7 dual webseeds \u00b7 WebTorrent",
+      "href": "https://beta.axanar.com/watch/the-gathering-storm"
+    }
+  ],
+  "films": [
+    {
+      "slug": "prelude-to-axanar",
+      "title": "Prelude to Axanar",
+      "year": 2014,
+      "runtime": "~21 min",
+      "section": "canonical",
+      "badge": "Award-winning",
+      "hasP2P": true,
+      "assets": 3
+    },
+    {
+      "slug": "the-vulcan-scene",
+      "title": "The Vulcan Scene",
+      "year": 2015,
+      "runtime": "~3 min",
+      "section": "canonical",
+      "badge": "Canon short",
+      "hasP2P": true,
+      "assets": 2
+    },
+    {
+      "slug": "prelude-to-axed-we-are",
+      "title": "Prelude to Ax'd-We-Are",
+      "year": 2020,
+      "runtime": "~7 min",
+      "section": "expanded-universe",
+      "badge": "EU \u00b7 parody",
+      "hasP2P": true,
+      "assets": 2
+    },
+    {
+      "slug": "the-icarus-maneuver",
+      "title": "The Icarus Maneuver",
+      "year": 2024,
+      "runtime": "~6 min",
+      "section": "canonical",
+      "badge": "Short",
+      "hasP2P": true,
+      "assets": 2
+    },
+    {
+      "slug": "interlude",
+      "title": "Interlude",
+      "year": 2024,
+      "runtime": "~12 min",
+      "section": "expanded-universe",
+      "badge": "EU",
+      "hasP2P": true,
+      "assets": 2
+    },
+    {
+      "slug": "daedalus",
+      "title": "Daedalus",
+      "year": 2025,
+      "runtime": "~6 min",
+      "section": "canonical",
+      "badge": "Ships of the War",
+      "hasP2P": true,
+      "assets": 2
+    },
+    {
+      "slug": "the-gathering-storm",
+      "title": "The Gathering Storm",
+      "year": 2026,
+      "runtime": "~21 min",
+      "section": "canonical",
+      "badge": "Premiere",
+      "hasP2P": true,
+      "assets": 3,
+      "featured": true
+    }
+  ],
+  "epics": [
+    {
+      "number": 61,
+      "title": "Shipping address reliability",
+      "status": "shipped",
+      "themeKey": "theme:shipping",
+      "blurb": "Shipping dual-write + survey\u2192profile promote. Account Contact & shipping stays in sync after perk surveys.",
+      "openThemeCount": 7,
+      "publicHref": "#issues"
+    },
+    {
+      "number": 62,
+      "title": "Legacy pledges & perks accuracy",
+      "status": "in-progress",
+      "themeKeys": [
+        "theme:legacy-data",
+        "theme:perks"
+      ],
+      "blurb": "Major win Aug 3: bulk restored old donor-portal package rows that never became Supabase pledges (hundreds of accounts). Opaque KS IDs humanized earlier. Residual: multi-email / non-KS-IGG gifts still need receipts.",
+      "openThemeCount": 3,
+      "publicHref": "#issues"
+    },
+    {
+      "number": 63,
+      "title": "Self-serve account email change",
+      "status": "shipped",
+      "themeKey": "theme:email",
+      "blurb": "Portal \u2192 Account \u2192 Login email; confirm link to new inbox. Shipped.",
+      "openThemeCount": 1,
+      "publicHref": "#issues"
+    },
+    {
+      "number": 64,
+      "title": "On Demand fan discovery",
+      "status": "shipped",
+      "themeKey": "theme:ondemand",
+      "blurb": "Download Now, guided modal, welcome-email deep links\u2014monitoring cold traffic.",
+      "openThemeCount": 4,
+      "publicHref": "#issues"
+    }
+  ],
+  "roadmap": {
+    "now": {
+      "title": "Now",
+      "subtitle": "This sprint \u00b7 beta",
+      "items": [
+        {
+          "title": "Legacy package backfill",
+          "status": "shipped",
+          "blurb": "Imported missing old-portal package rows into live pledges for accounts that had zero history.",
+          "epic": 62
+        },
+        {
+          "title": "Supporter history recovery (email)",
+          "status": "in-progress",
+          "blurb": "Open invitations to fans whose gifts may sit under another email or outside original KS/IGG package files.",
+          "epic": 62
+        },
+        {
+          "title": "On Demand discovery",
+          "status": "shipped",
+          "blurb": "Download Now CTAs, peer-assisted saves, welcome email with film download link."
+        },
+        {
+          "title": "Self-serve email change",
+          "status": "shipped",
+          "blurb": "Secure confirm-to-new-inbox flow on Portal \u2192 Account.",
+          "epic": 63
+        },
+        {
+          "title": "Shipping address UX",
+          "status": "shipped",
+          "blurb": "Survey and Account profile share one address; bulk backfill complete.",
+          "epic": 61
+        }
+      ]
+    },
+    "next": {
+      "title": "Next",
+      "subtitle": "2\u20136 weeks",
+      "items": [
+        {
+          "title": "Multi-email & dual-profile cases",
+          "status": "in-progress",
+          "blurb": "Staff-assisted merges when supporters confirm alternate emails used on campaigns.",
+          "epic": 62
+        },
+        {
+          "title": "Ranks / leaderboard link",
+          "status": "planned",
+          "blurb": "Retire dead axanardonors.com/leaderboard pointer."
+        },
+        {
+          "title": "Donate CTA clarity",
+          "status": "planned",
+          "blurb": "Obvious path for long-time fans who still want to give."
+        },
+        {
+          "title": "Partial package reconciliation",
+          "status": "planned",
+          "blurb": "Safer tooling for accounts that already show some pledges but still miss a campaign.",
+          "epic": 62
+        }
+      ]
+    },
+    "later": {
+      "title": "Later",
+      "subtitle": "Horizon",
+      "items": [
+        {
+          "title": "Always-on P2P seeder",
+          "status": "planned",
+          "blurb": "Keep WebTorrent swarms warm without relying only on fan peers."
+        },
+        {
+          "title": "Production cutover",
+          "status": "planned",
+          "blurb": "Clear beta \u2192 primary messaging on axanar.com."
+        },
+        {
+          "title": "Gathering Storm chapters",
+          "status": "planned",
+          "blurb": "Creative continuum\u2014tracked separately from portal IT."
+        }
+      ]
+    }
+  },
+  "knownIssues": [
+    {
+      "id": "shipping",
+      "theme": "Shipping address",
+      "themeKey": "theme:shipping",
+      "status": "Shipped",
+      "state": "ok",
+      "symptom": "Was: address looked saved on a perk form but Account \u2192 Contact showed blank/old data.",
+      "action": "Fixed: survey + profile dual-write, hydrate from latest survey, bulk promote addresses. Re-check Account \u2192 Contact or use Me too if you still see a problem.",
+      "openCount": 0
+    },
+    {
+      "id": "perks",
+      "theme": "Perks & rewards",
+      "themeKey": "theme:perks",
+      "status": "Improving",
+      "state": "ok",
+      "symptom": "Rewards missing or mislabeled (Blu-ray vs scriptbook, digital).",
+      "action": "Opaque Kickstarter IDs humanized; package backfill restored many missing tiers. Support can still correct individuals\u2014reply with a receipt if something is wrong.",
+      "openCount": 0
+    },
+    {
+      "id": "legacy",
+      "theme": "Legacy contributions",
+      "themeKey": "theme:legacy-data",
+      "status": "In progress",
+      "state": "warn",
+      "symptom": "Login works but some pledges still look empty or incomplete.",
+      "action": "Aug 3: bulk restored old portal packages that never became live pledges. Remaining gaps are often multi-email or outside original KS/IGG exports\u2014contact support with any other emails or receipts.",
+      "openCount": 3
+    },
+    {
+      "id": "email",
+      "theme": "Account email",
+      "themeKey": "theme:email",
+      "status": "Shipped",
+      "state": "ok",
+      "symptom": "Hard to change Kickstarter-era email.",
+      "action": "Self-serve: Portal \u2192 Account \u2192 Login email (confirm on the new inbox). Support can still help verified cases.",
+      "openCount": 1
+    },
+    {
+      "id": "ondemand",
+      "theme": "Finding downloads",
+      "themeKey": "theme:ondemand",
+      "status": "Operational",
+      "state": "ok",
+      "symptom": "Where do I download Gathering Storm?",
+      "action": "Library + Download Now + email deep links live \u2014 watching reports.",
+      "openCount": 0
+    },
+    {
+      "id": "community",
+      "theme": "Ranks / leaderboard",
+      "themeKey": "theme:community",
+      "status": "Planned",
+      "state": "info",
+      "symptom": "Ranks pointed at a dead axanardonors.com URL.",
+      "action": "Retarget to live roster or remove control.",
+      "openCount": 0
+    }
+  ],
+  "releases": [
+    {
+      "date": "2026-08-03",
+      "title": "Legacy portal package recovery",
+      "tag": "Shipped",
+      "body": "Hundreds of supporter accounts had package rows on the old donor portal that never became live pledges. We bulk-imported those package histories into the current platform (idempotent restore from legacy package tables). Live pledge count rose accordingly. History is still limited to original Kickstarter/Indiegogo package exports plus that portal\u2014other channels or emails may need a quick support conversation."
+    },
+    {
+      "date": "2026-08-03",
+      "title": "Donor history outreach",
+      "tag": "In progress",
+      "body": "Open, collaborative emails to supporters whose accounts are still incomplete\u2014inviting other emails, dates, amounts, and receipts. Staff is matching replies against multi-year campaign data; no blame, just recovery."
+    },
+    {
+      "date": "2026-08-03",
+      "title": "Kickstarter tier restore example",
+      "tag": "Shipped",
+      "body": "Example: a fan who saw Indiegogo perks but not Kickstarter\u2014missing $75 Axanar KS tier restored from portal package history; account total corrected."
+    },
+    {
+      "date": "2026-07-31",
+      "title": "Resend paid cutover",
+      "tag": "Shipped",
+      "body": "Transactional mail From: noreply@axanar.com on Alec Pro workspace (GitHub #76). Free-tier 100/day cap no longer applies to production sends."
+    },
+    {
+      "date": "2026-07-31",
+      "title": "Self-serve account email change",
+      "tag": "Shipped",
+      "body": "Portal \u2192 Account \u2192 Login email. Confirmation is emailed to the NEW address; old address is notified. Pledges stay linked. Resend production From is noreply@axanar.com on paid Pro. If the new email is already on another account, use Recover Records or support."
+    },
+    {
+      "date": "2026-07-31",
+      "title": "Shipping address reliability",
+      "tag": "Shipped",
+      "body": "Root cause: perk shipping surveys saved addresses on survey nodes while Account \u2192 Contact only read donor_profile (~12 profiles filled vs ~284 surveys). Fix: dual-write survey\u2192profile, hydrate GET /api/donor/me from latest survey, clearer save success UI, and one-shot drush axanar:promote-survey-addresses backfilled 224 empty profiles (0 remaining candidates). Please re-check Portal \u2192 Account \u2192 Contact & shipping; use Me too on this page if it still fails."
+    },
+    {
+      "date": "2026-07",
+      "title": "On Demand premiere stack",
+      "tag": "Shipped",
+      "body": "Free pass, full catalog stream, guided downloads, WebTorrent, comments \u2194 forum, welcome email with download link."
+    },
+    {
+      "date": "2026-07",
+      "title": "Support engineering queue",
+      "tag": "Shipped",
+      "body": "Beta reports + support + Gmail contact forms \u2192 private engineering queue with triage themes and this public status page."
+    },
+    {
+      "date": "2026-08",
+      "title": "Donor trust sprint",
+      "tag": "In progress",
+      "body": "Shipping reliability and self-serve email change shipped. Perk labels improved. Legacy package backfill shipped Aug 3. Remaining: multi-email cases, donate CTA, ranks link."
+    },
+    {
+      "date": "2026 H2",
+      "title": "Production hardening",
+      "tag": "Horizon",
+      "body": "Cutover messaging, seeder capacity, campaign parity, status page kept current."
+    }
+  ],
+  "links": {
+    "watch": "https://beta.axanar.com/watch",
+    "portal": "https://beta.axanar.com/portal",
+    "support": "https://beta.axanar.com/portal/support?tab=beta",
+    "contact": "https://beta.axanar.com/contact-us",
+    "issues": "#issues",
+    "epics": "#work",
+    "email": "mailto:axanartech@gmail.com?subject=Axanar%20beta%20issue",
+    "canonical": "https://beta.axanar.com/status"
+  },
+  "metrics": {
+    "openIssues": 8,
+    "closedRecently": 50,
+    "noiseClosed": 10,
+    "epicsOpen": 2,
+    "inboxEmailOpen": 1,
+    "retroOpen": 4,
+    "themes": {
+      "theme:shipping": 0,
+      "theme:perks": 0,
+      "theme:legacy-data": 3,
+      "theme:email": 1,
+      "theme:ondemand": 0,
+      "theme:community": 0,
+      "theme:auth": 0,
+      "theme:support-ops": 0
+    },
+    "themeBars": [
+      {
+        "id": "shipping",
+        "label": "Shipping address",
+        "key": "theme:shipping",
+        "color": "#f5a524",
+        "count": 0
+      },
+      {
+        "id": "perks",
+        "label": "Perks & rewards",
+        "key": "theme:perks",
+        "color": "#f31260",
+        "count": 0
+      },
+      {
+        "id": "legacy",
+        "label": "Legacy pledges",
+        "key": "theme:legacy-data",
+        "color": "#9b6dff",
+        "count": 3
+      },
+      {
+        "id": "email",
+        "label": "Email change",
+        "key": "theme:email",
+        "color": "#66b3ff",
+        "count": 1
+      },
+      {
+        "id": "ondemand",
+        "label": "On Demand",
+        "key": "theme:ondemand",
+        "color": "#c0a755",
+        "count": 0
+      },
+      {
+        "id": "community",
+        "label": "Community links",
+        "key": "theme:community",
+        "color": "#3dd68c",
+        "count": 0
+      },
+      {
+        "id": "ops",
+        "label": "Support ops",
+        "key": "theme:support-ops",
+        "color": "#94a3b8",
+        "count": 0
+      }
+    ]
+  }
+}

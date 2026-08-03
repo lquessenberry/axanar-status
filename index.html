@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Axanar Platform Status</title>
+  <meta name="description" content="Public fleet status for Axanar On Demand, the donor portal, and platform roadmap. No private engineering access required." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://beta.axanar.com/status" />
+  <meta property="og:title" content="Axanar Platform Status" />
+  <meta property="og:description" content="Live public status for On Demand, donor portal, and platform work." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --gold: #c0a755;
+      --gold-dim: rgba(192, 167, 85, 0.35);
+      --bg: #050505;
+      --panel: #0c0c0c;
+      --text: rgba(255, 255, 255, 0.92);
+      --muted: rgba(255, 255, 255, 0.55);
+      --faint: rgba(255, 255, 255, 0.3);
+      --ok: #34d399;
+      --warn: #fbbf24;
+      --bad: #f87171;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(192, 167, 85, 0.12), transparent 55%),
+                  radial-gradient(900px 500px at 100% 0%, rgba(80, 60, 20, 0.18), transparent 50%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    header { margin-bottom: 2rem; }
+    .eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.75rem;
+    }
+    h1 {
+      font-weight: 300;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      letter-spacing: 0.02em;
+      margin: 0 0 0.5rem;
+    }
+    .tagline { color: var(--muted); margin: 0 0 1rem; max-width: 40rem; }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem;
+      font-size: 0.8rem; color: var(--faint);
+    }
+    .banner {
+      border: 1px solid var(--gold-dim);
+      background: linear-gradient(135deg, rgba(192,167,85,0.08), transparent 60%);
+      padding: 0.9rem 1rem;
+      margin: 1.25rem 0 2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .banner strong { color: var(--text); font-weight: 600; }
+    .grid {
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      margin-bottom: 2rem;
+    }
+    .stat, .card, .issue, .release {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      padding: 1rem 1.1rem;
+    }
+    .stat .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--faint); }
+    .stat .value { font-size: 1.6rem; font-weight: 300; margin: 0.25rem 0; color: var(--gold); }
+    .stat .hint { font-size: 0.75rem; color: var(--muted); }
+    h2 {
+      font-weight: 300;
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      margin: 2.25rem 0 0.85rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .summary { color: var(--muted); max-width: 48rem; }
+    .systems { display: grid; gap: 0.65rem; }
+    .card {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 0.75rem 1rem;
+      align-items: start;
+    }
+    @media (max-width: 640px) {
+      .card { grid-template-columns: auto 1fr; }
+      .card .goto { grid-column: 2; }
+    }
+    .dot {
+      width: 0.65rem; height: 0.65rem; border-radius: 999px; margin-top: 0.4rem;
+      background: var(--ok); box-shadow: 0 0 0 3px rgba(52,211,153,0.15);
+    }
+    .dot.warn { background: var(--warn); box-shadow: 0 0 0 3px rgba(251,191,36,0.15); }
+    .dot.bad { background: var(--bad); box-shadow: 0 0 0 3px rgba(248,113,113,0.15); }
+    .card h3 { margin: 0; font-size: 1rem; font-weight: 500; }
+    .card .label { font-size: 0.75rem; color: var(--gold); margin-top: 0.15rem; }
+    .card .detail { font-size: 0.85rem; color: var(--muted); margin-top: 0.35rem; }
+    .goto { font-size: 0.8rem; white-space: nowrap; }
+    .roadmap {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .col h3 {
+      margin: 0 0 0.65rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .col .sub { font-size: 0.75rem; color: var(--faint); margin: -0.4rem 0 0.75rem; }
+    .item {
+      border-left: 2px solid var(--gold-dim);
+      padding: 0.35rem 0 0.35rem 0.75rem;
+      margin-bottom: 0.65rem;
+    }
+    .item .t { font-size: 0.95rem; }
+    .item .b { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+    .badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 1px solid var(--border);
+      padding: 0.1rem 0.4rem;
+      margin-left: 0.35rem;
+      color: var(--muted);
+      vertical-align: middle;
+    }
+    .badge.shipped { color: #6ee7b7; border-color: rgba(52,211,153,0.35); }
+    .badge.in-progress, .badge.improving { color: #fde68a; border-color: rgba(251,191,36,0.35); }
+    .issue { margin-bottom: 0.65rem; }
+    .issue .theme { font-weight: 500; }
+    .issue .sym { color: var(--muted); font-size: 0.9rem; margin-top: 0.35rem; }
+    .issue .act { color: var(--faint); font-size: 0.8rem; margin-top: 0.35rem; }
+    .films {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.5rem;
+    }
+    .film {
+      border: 1px solid var(--border);
+      padding: 0.75rem;
+      font-size: 0.85rem;
+      background: rgba(255,255,255,0.02);
+    }
+    .film .title { font-weight: 500; }
+    .film .meta { margin-top: 0.25rem; color: var(--faint); font-size: 0.75rem; }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--faint);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+    }
+    .err {
+      border: 1px solid rgba(248,113,113,0.4);
+      color: #fecaca;
+      padding: 1rem;
+      background: rgba(248,113,113,0.08);
+    }
+    code { font-size: 0.85em; color: rgba(255,255,255,0.45); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Axanar Productions · Public status</p>
+      <h1 id="title">Platform status</h1>
+      <p class="tagline" id="tagline">Loading…</p>
+      <div class="meta">
+        <span id="updated">—</span>
+        <a href="https://beta.axanar.com/status">Full branded page on beta →</a>
+        <a href="status.json">status.json</a>
+      </div>
+      <div class="banner">
+        <strong>This repository is public on purpose.</strong>
+        Engineering stays in a private tracker. Fans report issues via
+        <a href="https://beta.axanar.com/portal/support?tab=beta">portal support</a>,
+        the beta feedback control, or
+        <a href="mailto:axanartech@gmail.com?subject=Axanar%20beta%20issue">axanartech@gmail.com</a>.
+      </div>
+    </header>
+
+    <p class="summary" id="summary"></p>
+    <div class="grid" id="hero"></div>
+
+    <h2 id="systems">Systems</h2>
+    <div class="systems" id="systems"></div>
+
+    <h2 id="work">Roadmap</h2>
+    <div class="roadmap" id="roadmap"></div>
+
+    <h2 id="issues">Known issue themes</h2>
+    <div id="issues"></div>
+
+    <h2 id="films">On Demand catalog</h2>
+    <div class="films" id="films"></div>
+
+    <h2 id="releases">Recent public releases</h2>
+    <div id="releases"></div>
+
+    <footer>
+      <span>Data · <code>status.json</code></span>
+      <a href="https://beta.axanar.com/watch">On Demand</a>
+      <a href="https://beta.axanar.com/portal">Donor portal</a>
+      <a href="https://github.com/lquessenberry/axanar-status">Source (public)</a>
+      <span>Fan production · not endorsed by CBS / Paramount</span>
+    </footer>
+  </div>
+  <script>
+    const stateClass = (s) => {
+      const v = String(s || "").toLowerCase();
+      if (v === "warn" || v === "warning" || v === "degraded") return "warn";
+      if (v === "bad" || v === "down" || v === "error") return "bad";
+      return "";
+    };
+    const badgeClass = (s) => {
+      const v = String(s || "").toLowerCase().replace(/\s+/g, "-");
+      if (v.includes("ship")) return "shipped";
+      if (v.includes("progress") || v.includes("improv")) return "in-progress";
+      return "";
+    };
+    const esc = (s) => String(s ?? "")
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+
+    async function main() {
+      try {
+        const res = await fetch("./status.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("Could not load status.json (" + res.status + ")");
+        const data = await res.json();
+        document.title = (data.title || "Axanar Platform Status") + " · Public";
+        document.getElementById("title").textContent = data.title || "Axanar Platform Status";
+        document.getElementById("tagline").textContent = data.tagline || "";
+        document.getElementById("summary").textContent = data.summary || "";
+        const when = data.updatedAt || data.updated || "";
+        document.getElementById("updated").textContent = when
+          ? "Updated " + (data.updatedAt ? new Date(data.updatedAt).toLocaleString() : data.updated)
+          : "";
+
+        document.getElementById("hero").innerHTML = (data.heroStats || []).map((h) => `
+          <div class="stat">
+            <div class="label">${esc(h.label)}</div>
+            <div class="value">${esc(h.value)}</div>
+            <div class="hint">${esc(h.hint || "")}</div>
+          </div>`).join("");
+
+        document.getElementById("systems").innerHTML = (data.systems || []).map((s) => `
+          <div class="card">
+            <div class="dot ${stateClass(s.state)}"></div>
+            <div>
+              <h3>${esc(s.name)}</h3>
+              <div class="label">${esc(s.label || s.state || "")}</div>
+              <div class="detail">${esc(s.detail || "")}</div>
+            </div>
+            ${s.href ? `<a class="goto" href="${esc(s.href)}">Open →</a>` : "<span></span>"}
+          </div>`).join("");
+
+        const rm = data.roadmap || {};
+        const cols = ["now", "next", "later"].map((key) => {
+          const col = rm[key];
+          if (!col) return "";
+          const items = (col.items || []).map((it) => `
+            <div class="item">
+              <div class="t">${esc(it.title)}
+                ${it.status ? `<span class="badge ${badgeClass(it.status)}">${esc(it.status)}</span>` : ""}
+              </div>
+              <div class="b">${esc(it.blurb || "")}</div>
+            </div>`).join("");
+          return `<div class="col"><h3>${esc(col.title || key)}</h3>
+            <div class="sub">${esc(col.subtitle || "")}</div>${items}</div>`;
+        }).join("");
+        document.getElementById("roadmap").innerHTML = cols || "<p class='summary'>No roadmap published.</p>";
+
+        document.getElementById("issues").innerHTML = (data.knownIssues || []).map((i) => `
+          <div class="issue">
+            <div class="theme">${esc(i.theme)}
+              ${i.status ? `<span class="badge ${badgeClass(i.status)}">${esc(i.status)}</span>` : ""}
+              ${typeof i.openCount === "number" ? `<span class="badge">${i.openCount} open</span>` : ""}
+            </div>
+            <div class="sym">${esc(i.symptom || "")}</div>
+            <div class="act">${esc(i.action || "")}</div>
+          </div>`).join("") || "<p class='summary'>No known-issue themes listed.</p>";
+
+        document.getElementById("films").innerHTML = (data.films || []).map((f) => `
+          <div class="film">
+            <div class="title">${esc(f.title)}</div>
+            <div class="meta">${esc([f.year, f.runtime, f.badge].filter(Boolean).join(" · "))}
+              ${f.hasP2P ? " · P2P" : ""}</div>
+          </div>`).join("");
+
+        const releases = data.releases || [];
+        document.getElementById("releases").innerHTML = releases.length
+          ? releases.map((r) => `
+            <div class="release" style="margin-bottom:0.65rem">
+              <div><strong>${esc(r.title || r.name || "Release")}</strong>
+                ${r.date ? `<span class="badge">${esc(r.date)}</span>` : ""}
+              </div>
+              <div class="sym" style="margin-top:0.35rem;color:var(--muted);font-size:0.9rem">${esc(r.blurb || r.summary || "")}</div>
+            </div>`).join("")
+          : "<p class='summary'>See the branded beta status page for release notes.</p>";
+      } catch (e) {
+        document.getElementById("tagline").innerHTML =
+          `<div class="err">${esc(e.message)}. Try the canonical page at <a href="https://beta.axanar.com/status">beta.axanar.com/status</a>.</div>`;
+      }
+    }
+    main();
+  </script>
+</body>
+</html>
