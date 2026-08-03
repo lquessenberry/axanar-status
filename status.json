@@ -1,6 +1,6 @@
 {
   "updated": "2026-08-03",
-  "updatedAt": "2026-08-03T17:53:07.270Z",
+  "updatedAt": "2026-08-03T18:06:42.964Z",
   "title": "Axanar Platform Status",
   "tagline": "Fleet status \u00b7 On Demand \u00b7 Donor portal \u00b7 Legacy pledge recovery",
   "summary": "Major progress on donor trust: legacy portal package rows that never became live pledges were bulk-restored (hundreds of accounts). Kickstarter/Indiegogo package history is from a limited set of original campaign exports plus the old donor portal\u2014we are still matching gifts under other emails with supporters. On Demand streaming remains live. Open engineering work is down to a small queue focused on residual history recovery and dual-account staff review.",
@@ -393,10 +393,12 @@
     "issues": "#issues",
     "epics": "#work",
     "email": "mailto:axanartech@gmail.com?subject=Axanar%20beta%20issue",
+    "publicMirror": "https://lquessenberry.github.io/axanar-status/",
+    "publicRepo": "https://github.com/lquessenberry/axanar-status",
     "canonical": "https://beta.axanar.com/status"
   },
   "metrics": {
-    "openIssues": 8,
+    "openIssues": 9,
     "closedRecently": 50,
     "noiseClosed": 10,
     "epicsOpen": 2,
