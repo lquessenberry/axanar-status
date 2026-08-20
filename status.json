@@ -7,8 +7,8 @@
   "heroStats": [
     {
       "label": "Films free to stream",
-      "value": "7",
-      "hint": "Canonical + Expanded Universe"
+      "value": "6",
+      "hint": "Canonical + Expanded Universe (TGS paused)"
     },
     {
       "label": "P2P magnets healthy",
@@ -33,7 +33,7 @@
       "name": "Axanar On Demand",
       "state": "ok",
       "label": "Operational \u00b7 brand lead",
-      "detail": "Email unlock \u00b7 free stream & download \u00b7 7 titles \u00b7 brand-first library",
+      "detail": "Email unlock \u00b7 free stream & download \u00b7 library live \u00b7 TGS paused",
       "href": "https://beta.axanar.com/watch"
     },
     {
@@ -58,21 +58,10 @@
       "state": "ok",
       "label": "Operational",
       "detail": "Tigris progressive/HLS \u00b7 dual webseeds \u00b7 WebTorrent \u00b7 free catalog",
-      "href": "https://beta.axanar.com/watch/the-gathering-storm"
+      "href": "https://beta.axanar.com/watch"
     }
   ],
   "films": [
-    {
-      "slug": "the-gathering-storm",
-      "title": "The Gathering Storm",
-      "year": 2026,
-      "runtime": "~21 min",
-      "section": "canonical",
-      "badge": "Now premiering",
-      "hasP2P": true,
-      "assets": 3,
-      "featured": true
-    },
     {
       "slug": "daedalus",
       "title": "Daedalus: Ships of the Four Years War",
@@ -111,7 +100,8 @@
       "section": "canonical",
       "badge": "Award-winning",
       "hasP2P": true,
-      "assets": 3
+      "assets": 3,
+      "featured": true
     },
     {
       "slug": "interlude",
