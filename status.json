@@ -1,9 +1,9 @@
 {
-  "updated": "2026-08-03",
-  "updatedAt": "2026-08-03T21:18:51.676Z",
+  "updated": "2026-09-28",
+  "updatedAt": "2026-09-28T13:45:00.000Z",
   "title": "Axanar Platform Status",
   "tagline": "Fleet status \u00b7 Axanar On Demand \u00b7 Donor portal \u00b7 Battle for Axanar",
-  "summary": "Brand and product focus shifted: Axanar On Demand leads the public site (homepage + /watch) with \u201cWatch free. Proof we deliver.\u201d Seven free films stream and download after a simple email unlock (display name optional later). Battle for Axanar / VIP is secondary\u2014pricing only on vip.axanar.com\u2014so the campaign doesn\u2019t look cheap on axanar.com. Donate page grays unavailable multi-tier VIP packs; larger direct gifts to Axanar go to Alec via inquiry form. Signed-in members skip the free-pass gate. Donor legacy package recovery (894 restores) remains shipped; residual multi-email cases still open.",
+  "summary": "Moving from beta.axanar.com to axanar.com over the next several weeks.",
   "heroStats": [
     {
       "label": "Films free to stream",
@@ -29,35 +29,65 @@
   ],
   "systems": [
     {
-      "id": "ondemand",
-      "name": "Axanar On Demand",
+      "id": "support",
+      "name": "Support messages and feedback",
+      "state": "warn",
+      "label": "Partial outage",
+      "detail": "Messages may be delayed. Email axanartech@gmail.com.",
+      "href": "mailto:axanartech@gmail.com"
+    },
+    {
+      "id": "email",
+      "name": "Email notifications (password resets, receipts)",
+      "state": "warn",
+      "label": "Partial outage",
+      "detail": "Some emails may be delayed or not arrive."
+    },
+    {
+      "id": "news-links",
+      "name": "Older news, fan film and cast pages",
+      "state": "warn",
+      "label": "Partial outage",
+      "detail": "Some older news, fan film and cast pages don't open yet."
+    },
+    {
+      "id": "site",
+      "name": "Site",
       "state": "ok",
-      "label": "Operational \u00b7 brand lead",
-      "detail": "Email unlock \u00b7 free stream & download \u00b7 library live \u00b7 TGS paused",
-      "href": "https://beta.axanar.com/watch"
+      "label": "Operational",
+      "detail": "",
+      "href": "https://beta.axanar.com/"
     },
     {
       "id": "portal",
-      "name": "Donor portal",
+      "name": "Donor Portal",
       "state": "ok",
-      "label": "Operational \u00b7 improving",
-      "detail": "Login, shipping, and self-serve email change live. Large package backfill applied; some multi-email histories still need supporter help to finish matching.",
+      "label": "Operational",
+      "detail": "",
       "href": "https://beta.axanar.com/portal"
     },
     {
-      "id": "support",
-      "name": "Support & beta feedback",
+      "id": "shop",
+      "name": "Shop",
       "state": "ok",
       "label": "Operational",
-      "detail": "Portal, beta widget, and axanartech@gmail.com feed the private engineering queue",
-      "href": "https://beta.axanar.com/portal/support?tab=beta"
+      "detail": "",
+      "href": "https://beta.axanar.com/shop"
     },
     {
-      "id": "media",
-      "name": "Media empire",
+      "id": "donations",
+      "name": "Donations",
       "state": "ok",
       "label": "Operational",
-      "detail": "Tigris progressive/HLS \u00b7 dual webseeds \u00b7 WebTorrent \u00b7 free catalog",
+      "detail": "",
+      "href": "https://beta.axanar.com/donate"
+    },
+    {
+      "id": "films",
+      "name": "Films",
+      "state": "ok",
+      "label": "Operational",
+      "detail": "",
       "href": "https://beta.axanar.com/watch"
     }
   ],
